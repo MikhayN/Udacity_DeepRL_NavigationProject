@@ -74,7 +74,7 @@ Episode 500	Average Score: 6.95
 Episode 600	Average Score: 9.49
 ```
 Performance plot:<br/>
-![plot](images/pplot.PNG "Performance plot")
+![plot](images/pplo.PNG "Performance plot")
 
 ## Ideas for Future Work
 	

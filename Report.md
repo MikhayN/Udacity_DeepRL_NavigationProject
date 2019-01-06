@@ -66,14 +66,15 @@ UPDATE_EVERY = 10       # how often to update the network
 
 The resulted learning progress was frustrating:
 ```sh
-Episode 100	Average Score: -0.01
-Episode 200	Average Score: 0.172
-Episode 300	Average Score: -0.02
-Episode 400	Average Score: -0.20
-Episode 500	Average Score: -0.01
+Episode 100	Average Score: 0.58
+Episode 200	Average Score: 1.43
+Episode 300	Average Score: 3.31
+Episode 400	Average Score: 5.30
+Episode 500	Average Score: 6.95
+Episode 600	Average Score: 9.49
 ```
-Performance plot:
-![plot](images/pplot.jpg "Performance plot")
+Performance plot:<br/>
+![plot](images/pplot.PNG "Performance plot")
 
 ## Ideas for Future Work
 	

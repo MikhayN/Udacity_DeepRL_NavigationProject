@@ -14,10 +14,13 @@ next_state = env_info.vector_observations[0]   # get the next state
 reward = env_info.rewards[0]                   # get the reward
 done = env_info.local_done[0]                  # get the done
 ```
+
 ## Progress and hyperparameters estimation
-	
+
+### First Run
+
 First attempt was done with following model architecture:
-\br
+
 ```sh
 input (37) -> ReLU -> fully connected layer (fcl) (100) -> ReLU -> fcl (80) -> output (4)
 ```
@@ -40,10 +43,39 @@ Episode 300	Average Score: -0.02
 Episode 400	Average Score: -0.20
 Episode 500	Average Score: -0.01
 ```
+
 I interrupted the kernel, so there is no plot, but results are obvious anyway.
+
+### Second Run
+
+The second attempt was done with following model architecture:
+
+```sh
+input (37) -> ReLU -> fully connected layer (fcl) (64) -> ReLU -> fcl (64) -> ReLU -> fcl (64) -> output (4)
+```
+
+Hyperparameters were following:
+```sh
+BUFFER_SIZE = int(1e5)  # replay buffer size
+BATCH_SIZE = 10         # minibatch size
+GAMMA = 0.99            # discount factor
+TAU = 1e-3              # for soft update of target parameters
+LR = 0.001              # learning rate 
+UPDATE_EVERY = 10       # how often to update the network
+```
+
+The resulted learning progress was frustrating:
+```sh
+Episode 100	Average Score: -0.01
+Episode 200	Average Score: 0.172
+Episode 300	Average Score: -0.02
+Episode 400	Average Score: -0.20
+Episode 500	Average Score: -0.01
+```
+Performance plot:
+![plot](images/pplot.jpg "Performance plot")
 
 ## Ideas for Future Work
 	
- - Change the model architecture
- - Decrease the learning rate `LR`
- - Increase the interval for updating the target network `UPDATE_EVERY`
+ - Play further with hyperparameters
+ - Improve the learning algorithm (include Duelling 
